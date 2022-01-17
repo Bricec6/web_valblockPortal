@@ -40,8 +40,7 @@ body, html {
 }
 
 .containerTitleContent h1{
-    font-size: 5rem;
-    width: 50%;
+    font-size: clamp(3rem, 10vw, 5rem);
     margin: 5rem auto;
     text-align: center;
 }
@@ -55,7 +54,7 @@ body, html {
     min-height: 100vh;
     background: linear-gradient(to bottom,#00000059,rgba(0,0,0, 100)) ,url(../img/background.webp);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position-y: 20%;
     filter: blur(4px);
 }
@@ -66,8 +65,13 @@ body, html {
     top: 29%;
     text-align: center;
     text-shadow: #000 1px 1px 8px;
-    font-size: 2vh;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     letter-spacing: 1px;
+    padding: 0 1rem;
+}
+
+.sectionInfoBox_details {
+    line-height: 3rem;
 }
 
 .sectionInfoBox a {
@@ -77,10 +81,10 @@ body, html {
     border-style: solid;
     border-radius: var(--radius);
     background-color: #222222a1;
-    font-size: 0.9vw;
     filter: initial;
     transition: filter 2s 0.3s;
     margin: 0 0.3rem;
+    white-space: nowrap;
 }
 
 .sectionInfoBox a:hover {
@@ -95,6 +99,7 @@ body, html {
     width: 100%;
     text-align: center;
     animation: floating 3s infinite ease-in-out;
+    top: calc(75% - 10vw);
 }
 
 
@@ -103,8 +108,6 @@ body, html {
 }
 
 .sectionInfoButton {
-    width: 20%;
-    margin: 0 auto;
     padding: 1rem 2rem 1rem 1rem;
     border-style: solid;
     border-radius: var(--radius);
@@ -115,6 +118,7 @@ body, html {
     color: inherit;
     filter: initial;
     transition: filter 2s 0.3s;
+    font-size: clamp(0.875rem, 5vw, 1rem);
 }
 
 .sectionInfoButton:hover {
@@ -139,34 +143,4 @@ body, html {
 .footerContainer a{
     text-decoration: none;
     color: inherit;
-}
-
-@media only screen and (max-width:1150px) {
-    .imgBackground {
-        background-size: cover;
-    }
-    .containerTitleContent h1 {
-        font-size: 6vh;
-    }
-    .sectionInfoBox {
-        font-size: 1.5vh;
-    }
-}
-
-@media only screen and (max-width:750px) {
-    .sectionInfoBox a {
-        font-size: 2vw;
-    }
-}
-
-@media only screen and (max-width:420px) {
-    .containerTitleContent {
-        width: none;
-    }
-    .containerTitleContent h1 {
-        font-size: 4vh;
-    }
-    .sectionInfoBox {
-        font-size: 1.3vh;
-    }
 }
